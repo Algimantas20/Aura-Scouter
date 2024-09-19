@@ -36,9 +36,8 @@ const commands = [
     console.log("Registering slash commands...");
 
     await rest.put(
-      Routes.applicationGuildCommands(
+      Routes.applicationCommands(
         process.env.CLIENT_ID,
-        process.env.GUILD_ID
       ),
       { body: commands }
     );
