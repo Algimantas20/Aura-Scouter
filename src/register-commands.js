@@ -1,5 +1,7 @@
-require("dotenv").config();
-const { ApplicationCommandOptionType, REST, Routes } = require("discord.js");
+import { ApplicationCommandOptionType, REST, Routes } from "discord.js";
+import dotenv from 'dotenv';
+dotenv.config();
+
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
 
 const commands = [
@@ -29,6 +31,10 @@ const commands = [
     name: "aura-clear",
     description: "Clears everyones aura to zero",
   },
+  {
+    name: "shutdown",
+    description: "Shutdown the bot"
+  }
 ];
 
 (async () => {
